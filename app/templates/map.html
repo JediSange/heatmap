@@ -30,7 +30,7 @@
       var map = L.map('map', {
         maxZoom: mapMaxZoom,
         minZoom: mapMinZoom,
-      }).setView([0, 0], 3);
+      }).setView([0, 0], 1);
         
       var mapBounds = new L.LatLngBounds(
           map.unproject([0, 1280], mapMaxZoom),
@@ -47,12 +47,17 @@
       var markers = L.markerClusterGroup();
 
       {% for event in events %}
+        var title = '';
+        title += 'Player: {{ event.player_id }}<br/>';
+        title += 'Killer: {{ event.source_player_id }}<br/>';
+        title += 'Weapon: {{ event.weapon_id }}';
+
         var marker = L.marker(
-          new L.LatLng({{ event.pos_x }}, {{ event.pos_y }}),
-          { title: "Test" }
+          new L.LatLng({{ event.pos_y }}, {{ event.pos_x }}),
+          { title: "Event" }
         );
 
-        marker.bindPopup("Test");
+        marker.bindPopup(title);
         markers.addLayer(marker);
       {% endfor %}
 
