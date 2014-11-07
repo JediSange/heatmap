@@ -19,7 +19,9 @@ Most of this should be platform agnostic pending python and virtualenv are insta
     cd app
     python manage.py runserver
 
-**Note** that if you're running Vagrant, the final command will have to be `python manage.py runserver 0.0.0.0:8000`.  You should now be able to see the heatmap by going to `http://localhost:8000` in your browser
+**Note:** Run `python manage.py runserver 0.0.0.0:8000` if running from Vagrant.  
+
+You should now be able to see the heatmap by going to `http://localhost:8000` in your browser
 
 ## Usage
 The app accepts events as URLs.  The format and example follow, assuming Django is running locally from the `manage.py runserver` command.
