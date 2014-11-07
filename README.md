@@ -24,8 +24,8 @@ You should now be able to see the heatmap by going to `http://localhost:8000` in
 ## Usage
 The app accepts events as URLs.  The format and example follow, assuming Django is running locally from the `manage.py runserver` command.
 
-   127.0.0.1:8000/api/player_id/source_player_id/weapon_id/pos_x/pos_y
-   127.0.0.1:8000/api/1/2/1/10.0/11.1
+    127.0.0.1:8000/api/player_id/source_player_id/weapon_id/pos_x/pos_y
+    127.0.0.1:8000/api/1/2/1/10.0/11.1
 
 ## Design Choices
 ### Scalability
