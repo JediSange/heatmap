@@ -5,6 +5,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.network :forwarded_port, host: 8000, guest: 8000
   config.vm.network :forwarded_port, host: 8080, guest: 8080
   config.vm.provision :shell, path: "bootstrap.sh"
+  config.vm.provision :shell, path: "bootstrap_user.sh", privileged: false
 
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
