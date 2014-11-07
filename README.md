@@ -19,7 +19,16 @@ Most of this should be platform agnostic pending python and virtualenv are insta
     cd app
     python manage.py runserver
 
-You should now be able to see the heatmap by going to `http://localhost:8000`
+You should now be able to see the heatmap by going to `http://localhost:8000` in your browser
 
 ## Usage
 TODO
+
+## Design Choices
+### Scalability
+### Coupled Requirements
+
+## Future Improvements
+- Add in Nginx/Gunicorn configuration
+- Make local environment variables (IE: hide secret key, debug settings, etc)
+- Wrap "API" into its own app for expansion
