@@ -5,6 +5,13 @@
 - virtualenv
 - mongodb
 
+## Made With
+[Django](https://www.djangoproject.com/)
+[Leaflet](http://leafletjs.com/)
+[Leaflet.markercluster](https://github.com/Leaflet/Leaflet.markercluster)
+[MapTiler](http://www.maptiler.com)
+[mongoengine](http://mongoengine.org/)
+
 ## Local Environment
 This app makes use of [Vagrant](https://www.vagrantup.com/) and [VirtualBox](https://www.virtualbox.org/) for local development but neither are required.  The default provision provides a 64 bit Ubuntu box that should come preinstalled with everything you need to run the included Django app.  Simply `vagrant up` and then navigate to the `/vagrant` directory
 
@@ -34,7 +41,8 @@ The app accepts events as URLs.  The format and example follow, assuming Django 
 ### Coupled Requirements
 
 ## Future Improvements
-- Validation checks surrounding events
+- Filter by weapon type (can be done with an AJAX solution and filtering by Mongo)
+- Validation checks surrounding events - is player valid? are points valid?
 - Wrap "API" into its own app for expansion
 - Make local environment variables (IE: hide secret key, debug settings, etc)
 - Add in Nginx/Gunicorn configuration

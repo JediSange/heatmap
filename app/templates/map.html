@@ -2,11 +2,61 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
     <title>AustinDev.me</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no"/>
+    
+    <!-- Base Leaflet -->
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+    <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+
+    <!-- Load MarkerCluster -->
+    <script src="{% static "js/markercluster/dist/leaflet.markercluster.js" %}"></script>
+    <link rel="stylesheet" href="{% static "js/markercluster/dist/MarkerCluster.Default.css"%} ">
+    <link rel="stylesheet" href="{% static "js/markercluster/dist/MarkerCluster.css" %} ">
+
+    <style>
+      html, body, #map { width:100%; height:85vh; margin:0; padding:0; }
+    </style>
   </head>
 
   <body>
-  <h1>test</h1>
+    <h1>Heat Map</h1>
+    <div id="map"></div>
+
+    <script>
+      var mapMinZoom = 0;
+      var mapMaxZoom = 3;
+      var map = L.map('map', {
+        maxZoom: mapMaxZoom,
+        minZoom: mapMinZoom,
+      }).setView([0, 0], 3);
+        
+      var mapBounds = new L.LatLngBounds(
+          map.unproject([0, 1280], mapMaxZoom),
+          map.unproject([2048, 0], mapMaxZoom));
+          
+      map.fitBounds(mapBounds);
+      L.tileLayer('/static/map/{z}/{x}/{y}.png', {
+        minZoom: mapMinZoom, maxZoom: mapMaxZoom,
+        bounds: mapBounds,
+        attribution: 'Rendered with <a href="http://www.maptiler.com/">MapTiler</a>',
+        noWrap: true          
+      }).addTo(map);
+
+      var markers = L.markerClusterGroup();
+
+      {% for event in events %}
+        var marker = L.marker(
+          new L.LatLng({{ event.pos_x }}, {{ event.pos_y }}),
+          { title: "Test" }
+        );
+
+        marker.bindPopup("Test");
+        markers.addLayer(marker);
+      {% endfor %}
+
+      map.addLayer(markers);
+    </script>
   </body>
 </html>
