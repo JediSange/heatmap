@@ -1,4 +1,7 @@
-# Red 5 Heatmap
+# Heatmap
+
+## About
+This is just a small heatmap app I did for fun and to mess around more with Django.  There are a huge number of issues with it and I'm not sure how much I will maintain it.  Pull requests welcome.
 
 ## Requirements
 - python 2.x/3.x
