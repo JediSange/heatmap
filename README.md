@@ -21,9 +21,9 @@ This app makes use of [Vagrant](https://www.vagrantup.com/) and [VirtualBox](htt
 ## Installation
 Most of this should be platform agnostic pending python and virtualenv are installed.  However, it is recommended to be ran on a Linux variant, preferrably Ubuntu.  Adjust accordingly.
 
-    git clone git@github.com:JediSange/red5app.git
-    virtualenv red5app
-    cd red5app
+    git clone git@github.com:JediSange/heatmap.git heatmap
+    virtualenv heatmap
+    cd heatmap
     source bin/activate
     pip install -r config/pip.requirements.txt
     cd app
