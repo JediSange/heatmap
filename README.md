@@ -40,10 +40,6 @@ The app accepts events as URLs.  The format and example follow, assuming Django 
     127.0.0.1:8000/api/player_id/source_player_id/weapon_id/pos_x/pos_y
     127.0.0.1:8000/api/1/2/1/10.0/11.1
 
-## Design Choices
-### Scalability
-### Coupled Requirements
-
 ## Future Improvements
 - Filter by weapon type (can be done with an AJAX solution and filtering by Mongo)
 - Validation checks surrounding events - is player valid? are points valid?
